@@ -9,8 +9,8 @@ import com.lorne.tx.service.model.TxServer;
 import com.lorne.tx.service.model.TxState;
 import com.lorne.tx.utils.SocketManager;
 import com.lorne.tx.utils.SocketUtils;
+import com.netflix.appinfo.ApplicationInfoManager;
 import com.netflix.appinfo.InstanceInfo;
-import com.netflix.eureka.EurekaServerContextHolder;
 import io.netty.channel.Channel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -47,6 +47,8 @@ public class TxServiceImpl implements TxService {
     @Autowired
     private DiscoveryService discoveryService;
 
+    @Autowired
+    private ApplicationInfoManager applicationInfoManager;
 
     @Override
     public TxServer getServer() {
@@ -88,11 +90,10 @@ public class TxServiceImpl implements TxService {
         }
     }
 
-
     @Override
     public TxState getState() {
         TxState state = new TxState();
-        String ipAddress = EurekaServerContextHolder.getInstance().getServerContext().getApplicationInfoManager().getEurekaInstanceConfig().getIpAddress();
+        String ipAddress = applicationInfoManager.getEurekaInstanceConfig().getIpAddress();
         if(!isIp(ipAddress)){
             ipAddress = "127.0.0.1";
         }

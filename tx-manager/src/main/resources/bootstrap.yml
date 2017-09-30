@@ -1,19 +1,9 @@
-eureka:
-  instance:
-    hostname: ${hostname:localhost}
-    preferIpAddress: true
-  server:
-    peerEurekaNodesUpdateIntervalMs: 60000
-    enableSelfPreservation: false
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-    healthcheck:
-      enabled: true
-    eurekaServiceUrlPollIntervalSeconds: 60
-
-endpoints:
-  health:
-    sensitive: false
-
-
+ spring:
+  cloud:
+    config:
+      name: cloud-config
+      uri: http://config.zhicong.site
+      profile: ${config.profile:dev}
+      label: ${config.label:master}
+      username: ${CONFIG_SERVER_USER:root}
+      password: ${CONFIG_SERVER_PASSWORD:admin}
