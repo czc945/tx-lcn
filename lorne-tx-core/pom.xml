@@ -40,24 +40,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <org.springframework-version>4.3.10.RELEASE</org.springframework-version>
+        <org.springframework-version>4.3.11.RELEASE</org.springframework-version>
         <guava.version>18.0</guava.version>
         <hessian.version>4.0.38</hessian.version>
         <protostuff.version>1.0.8</protostuff.version>
-        <kryo.version>4.0.0</kryo.version>
-        <org.slf4j-version>1.7.21</org.slf4j-version>
+        <kryo.version>3.0.3</kryo.version>
+        <org.slf4j-version>1.7.25</org.slf4j-version>
     </properties>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -84,7 +76,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.5.4.RELEASE</version>
+                <version>1.5.7.RELEASE</version>
             </plugin>
         </plugins>
     </build>
@@ -120,12 +112,12 @@
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.8.4</version>
+            <version>1.8.10</version>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
-            <version>1.8.4</version>
+            <version>1.8.10</version>
         </dependency>
 
 
